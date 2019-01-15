@@ -1,0 +1,34 @@
+<view class='body'>
+<view class='zj-content' wx:if="{{noData}}">
+    <view class='content_'>
+        <image mode='widthFix' src='{{iconpath}}postionnull.png'></image>
+          <text>您还没有发布职位，快去发布职位吧！</text> 
+          <view class='again' bindtap='again'>发布职位</view> 
+    </view>
+  </view>
+  <view class='content' wx:if="{{hasData}}">
+    <view class='list'  wx:for="{{data.data}}" wx:key="unique" wx:for-item="val"  style="display:{{del[val.recruitment_id]}}">
+     <view class='delete' bindtap='del' data-id='{{val.recruitment_id}}'>
+      <view class='content' catchtap='reeditor' data-id='{{val.recruitment_id}}'  id='{{index}}' bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style='background:#fff;left:-{{left[index]}}rpx' >
+          <view class='top'>
+            <view class='left'>{{data.position[val.position_id]}}</view>
+            <view class='right'>{{data.salary[val.salary_id]}}</view>
+          </view>
+          <view class='centent'>
+              <view class='left'>{{val.city}} | {{val.experience}} | {{val.degree}}</view>
+              <view class='right'>{{val.number}}人</view>
+          </view>
+          <view class='bottom'>
+            <view class='logo'><image mode='widthFix' src='{{domain}}{{data.company.logo}}'></image></view>
+            <view class='cname'>{{data.company.companyname}}</view>
+          </view>
+      </view>
+      </view>
+    </view>
+      <!-- 底线 -->
+      <view style='width:100%;height:80rpx;'></view>
+      <view class='line' bindtap='again'>发布职位</view>
+  </view>
+
+  
+</view>

@@ -1,0 +1,127 @@
+<view class='body'>
+    <view class='content'>
+    <form bindsubmit="formSubmit">
+    <input name="recruitment_id" value='{{data.recruitment.recruitment_id}}' style="display:none"/>
+      <view class='select'>
+        <view class='left'>招聘职位</view>
+        <picker range="{{positionlist}}" bindchange="birthdayChangeposition" >
+          <view class='center'>
+            <input placeholder-class="phcolor" value='{{position || data.position[data.recruitment.position_id]}}' name="position_id" placeholder="请选择"  disabled="true"/>
+          </view>
+          <view class='right'> 
+            <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+          </view>
+        </picker>
+      </view>
+      <view class='select'>
+        <view class='left'>招聘人数</view>
+        <view class='center'>
+        <input maxlength="2" bindblur="numchnage"  value='{{numchnageval || data.recruitment.number}}' type="number" name="number" placeholder-class="phcolor" placeholder="请输入"/>
+        </view>
+        <view class='right'></view>
+      </view>
+
+ 
+
+      <view class='select' style='border:none;'>
+        <view class='left'>岗位性质</view>
+        <picker bindchange="birthdayChangeproperties" range="{{propertieslist}}">
+          <view class='center'>
+            <input placeholder-class="phcolor"  name="properties" placeholder="请选择" value='{{properties||data.recruitment.properties}}' disabled="true"/>
+          </view>
+          <view class='right'> 
+            <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+          </view>
+        </picker>
+      </view>
+
+      <view class='hr' style='height:10rpx;'></view>
+
+      <view class='select'>
+        <view class='left'>薪资范围</view>
+        <picker bindchange="birthdayChangesalary" range="{{salarylist}}">
+          <view class='center'>
+            <input placeholder-class="phcolor" name="salary_id" placeholder="请选择" value='{{salary||data.salary[data.recruitment.salary_id]}}' disabled="true"/>
+          </view>
+          <view class='right'> 
+            <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+          </view>
+        </picker>
+      </view>
+
+
+      <view class='select'>
+        <view class='left'>学历要求</view>
+        <picker bindchange="birthdayChangedegree" range="{{degreelist}}">
+          <view class='center'>
+            <input placeholder-class="phcolor" name="degree" placeholder="请选择" value='{{degree||data.recruitment.degree}}' disabled="true"/>
+          </view>
+          <view class='right'> 
+            <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+          </view>
+        </picker>
+      </view>
+
+          <view class='select'>
+          <view class='left'>经验要求</view>
+         <picker bindchange="birthdayChangeexperience" range="{{experiencelist}}">
+              <view class='center'>
+                <input placeholder-class="phcolor" name="experience" placeholder="请选择" value='{{experience||data.recruitment.experience}}' disabled="true"/>
+              </view>
+              <view class='right'> 
+                <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+              </view>
+            </picker>
+      </view>
+
+
+
+      <view class='select'>
+           <view class='left'>职位详情</view>
+            <navigator url="../text/text?m=positionDal&title=职位详情" hover-class="navigator-hover">
+            <view class='center'><input maxlength="30" name="details" value='{{data.details||data.recruitment.details}}'  placeholder-class="phcolor" disabled="true" placeholder="请输入" /></view>
+            <view class='right'>
+                    <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+            </view>
+          </navigator>
+      </view>
+
+
+
+      <view class='select' style="border:none;">
+           <view class='left'>职位要求</view>
+             <navigator url="../text/text?m=requirements&title=职位要求" hover-class="navigator-hover">
+            <view class='center'><input maxlength="30" name="requirements" value='{{data.requirements||data.recruitment.requirements}}' type='number' placeholder-class="phcolor" disabled="true" placeholder="请输入" /></view>
+            <view class='right'>
+                    <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+            </view>
+          </navigator>
+      </view>
+
+      
+      <view class='hr' style='height:10rpx;'></view>
+
+      <!-- <view class='select'>
+          <view class='left'>公司名称</view>
+          <view class='center'><input maxlength="11" type='number' placeholder-class="phcolor" placeholder="请输入" /></view>
+          <view class='right'></view>
+      </view> -->
+
+
+
+      <view class='select' style='border:none;'>
+          <view class='left'>工作地址</view>
+          <navigator url="../address/address" hover-class="navigator-hover">
+            <view class='center'><input maxlength="30" name="address" value='{{data.address.address||data.recruitment.address}}' type='number' placeholder-class="phcolor" disabled="true" placeholder="请输入" /></view>
+            <view class='right'>
+                    <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image>
+            </view>
+          </navigator>
+      </view>
+
+        <view class='btop'>
+            <button form-type='submit' class='button' disabled="{{disButton}}">发布职位</button>
+        </view> 
+        </form>
+    </view>
+</view>

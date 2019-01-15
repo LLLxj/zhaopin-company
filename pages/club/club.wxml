@@ -1,0 +1,28 @@
+<!--job/club/club.wxml-->
+<!--俱乐部列表-->
+
+<!-- <view class="club_info"> -->
+  <view class="club_content">
+    <view class="club_info_list" wx:for="{{data}}" bindtap="{{userInfo ? 'to_club_info' : 'toLogin'}}" wx:key="unique" data-id='{{item.company_id}}'>
+        <view class='left'>
+          <view class="left_bor">
+            <image class="club_info_img" mode='widthFix' src="{{item.logo}}"></image>
+          </view>
+        </view>
+        <view class="center">
+            <view class="club_name" >{{item.companyname}}</view>
+            <view class="region" >{{item.province}} |  {{item.city}}</view>
+            <view class="works_num">{{item.position_num}}个岗位</view>
+        </view>
+        <view class="right">
+            <image class="detail_arror" mode='widthFix'  src='../../images/right.png'></image>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <!-- <view class="clear"></view> -->
+
+    <view class='prompt' style='display:{{prompt_display}}'> {{prompt_msg}} </view>
+    <!-- <view class='prompt' style='display:{{prompt_display}}'> prompt_msg </view> -->
+    <!-- <view class='line'></view> -->
+  </view> 
+<!-- </view> -->

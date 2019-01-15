@@ -1,0 +1,34 @@
+<view class="body">
+
+    <view class='zj-content' wx:if="{{noData}}" style="width:{{width}}px;height:{{height}}px">
+      <view class='content_'>
+          <image mode='widthFix' src='../../images/manageNoData.png'></image>
+           <text>暂无数据</text> 
+      </view>
+    </view>
+
+    <view class='centent' wx:if="{{hasData}}">
+      <view class='list'  wx:for="{{data}}" bindtap='showresume' data-userid='{{item.uid}}' data-index='{{index}}' data-delivery_id="{{item.delivery_id}}">
+        <view class='content'>
+            <view class='left'>
+              <view class='icon'>
+                  <image mode='widthFix' src='{{item.user.icon}}'></image>
+              </view>
+              <view wx:if="{{item.status2 == 0}}" class='dian'></view>
+            </view>
+            <view class='center'>
+                <view class='ctop'>{{item.position}}</view>
+                <view class='ccenter'>{{item.user.city}} | {{item.user.username}}</view>
+                <view class='cbottom'>{{item.salary}}</view>
+            </view>
+            <view class='right'>
+              <view class='rtop'>{{item.time}}<text style='color:#fff'>1</text></view>
+              <view class='rbottom'>【{{item.status}}】</view>
+            </view>
+        </view>
+      </view>
+      <view class='prompt' style='display:{{prompt_display}}'> {{prompt_msg}} </view>
+    </view>
+
+
+</view>

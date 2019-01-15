@@ -1,0 +1,59 @@
+{
+  "enablePullDownRefresh": true,
+  "debug": false,
+  "pages":[
+    "pages/personCenter/personCenter",
+    "pages/club/club",
+    "pages/talent/talent",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/certification1/certification1",
+    "pages/certification2/certification2",
+    "pages/certification3/certification3",
+    "pages/positionManage/positionManage",
+    "pages/feedback/feedback",
+    "pages/management/management",
+    "pages/positionnull/positionnull",
+    "pages/release/release",
+    "pages/text/text",
+    "pages/address/address",
+    "pages/mobile/mobile",
+    "pages/userinfo/userinfo",
+    "pages/audit/audit",
+    "pages/auditerror/auditerror",
+    "pages/clubDetail/clubDetail",
+    "pages/resumeDetail/resumeDetail",
+    "pages/positionDetail/positionDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "黑格力斯",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#7f8389",
+    "selectedColor": "#6ac4d2",
+    "borderStyle": "red",
+    "list": [
+      {
+        "selectedIconPath": "images/jianli.png",
+        "iconPath": "images/jianli2.png",
+        "pagePath": "pages/talent/talent",
+        "text": "人才"
+      },
+      {
+        "selectedIconPath": "images/club.png",
+        "iconPath": "images/club1.png",
+        "pagePath": "pages/club/club",
+        "text": "俱乐部"
+      },
+      {
+        "selectedIconPath": "images/user.png",
+        "iconPath": "images/user2.png",
+        "pagePath": "pages/personCenter/personCenter",
+        "text": "我的"
+      }
+    ]
+  }
+}

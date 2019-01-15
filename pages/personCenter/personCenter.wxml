@@ -1,0 +1,89 @@
+<view class='body'>
+  <view class='content'>
+      <view class='top'>
+        <view class='info'>
+          <view class='left'>
+            <text style='margin-top:30rpx'>{{userInfo['username']||'点击登陆'}}</text>
+            <text class='p' wx:if="{{userInfo}}" >修改信息请联系公司管理人员</text>
+            <text class='p' wx:else></text>
+          </view>
+          <view class='right'>
+            <image mode='cover' wx:if="{{userInfo}}" src="{{userInfo['icon']}}"></image>
+            <button open-type="getUserInfo" wx:else lang="zh_CN" class='getuserinfo' bindgetuserinfo="onGotUserInfo" bindtap="onGotUserInfo"><image mode='cover' src="{{iconpath}}userpic.png"></image></button>
+            <!-- <button open-type="getPhoneNumber" lang="zh_CN" class='getUserInfo' bindgetphonenumber="getPhoneNumber"><image mode='cover' src="{{iconpath}}userpic.png"></image></button> -->
+            <!-- <button open-type="getPhoneNumber" class="getUserInfo" bindgetphonenumber="getPhoneNumber">获取用户手机号</button> -->
+          </view>
+        </view>
+      </view>
+
+      <!-- 分割 -->
+      <view class='hr'></view>
+
+      <view class='nav'>
+        
+        <!-- <view class='nav_' bindtap="{{userInfo ? 'certification' : 'toLogin'}}"> -->
+        <view class='nav_ certification' bindtap="{{userInfo ? '' : 'toLogin'}}">
+          <view class='left'><image mode='widthFix' src='{{iconpath}}renzheng.png'></image></view>
+          <view class='centen'>企业认证</view>
+          <view class='right'><text style='color:#9b9b9b;font-size:30rpx;' wx:if="{{status === 6}}">已认证</text><text style='color:#9b9b9b;font-size:30rpx;' wx:if="{{status === 4}}">审核中</text><image wx:if="{{status === 0 || status === 1 || status === 2 || status === 3 || status === 5 }}" src='{{iconpath}}right.png' mode='widthFix'></image></view>
+          <view class="hide-button" wx:if="{{userInfo}}">
+            <button open-type="getUserInfo" class='fake-button' bindgetuserinfo="onGotUserInfo1">
+              隐藏按钮
+            </button>  
+          </view>
+        </view>
+
+        <view class='hr2'></view>
+          <view class='nav_' bindtap="{{userInfo ? 'reposition' : 'toLogin'}}">
+              <view class='left'><image mode='widthFix' src='{{iconpath}}zhiwei.png'></image></view>
+              <view class='centen'>职位管理</view>
+              <view class='right'><image src='{{iconpath}}right.png' mode='widthFix'></image></view>
+          </view>
+          <view class='hr2'></view>
+      
+          <view class='nav_ nav_2' bindtap="{{userInfo ? 'management' : 'toLogin'}}">
+              <view class='left'><image mode='widthFix' src='{{iconpath}}zhaopin.png'></image></view>
+              <view class='centen'>招聘管理</view>
+              <view class='right'><view wx:if="{{count !== 0 && count !== '' && count !== '0'}}" class='count'>{{count}}</view><image src='{{iconpath}}right.png' mode='widthFix'></image></view>
+          </view>
+          <view class='hr2'></view>
+           <view class='nav_' bindtap="{{userInfo ? 'refeedback' : 'toLogin'}}">
+              <view class='left'><image mode='widthFix' src='{{iconpath}}ufk.png'></image></view>
+              <view class='centen'>意见反聩</view>
+              <view class='right'><image src='{{iconpath}}right.png' mode='widthFix'></image></view>
+          </view>
+          <view class='hr2'></view>
+      </view>
+      <view class='hr'></view>
+      <view class='unlogin' bindtap='unlogin' wx:if="{{userInfo}}">退出登录</view>
+  </view>
+
+  <view class="zj-cover" wx:if="{{showOrDisplay}}" style="width:{{width}}px;height:{{height}}px">
+    <!-- 选择登录模式 -->
+    <view class="zj-choose-login">
+
+      <view class="zj-cancle-login"  bindtap="calcleLogin">
+        <image src="../../images/cancle.png"></image>
+        <view class="clear"></view>
+      </view>
+
+      <text class="zj-login-style">登录方式</text>
+
+
+      <view class="zj-wechat-login" bindgetuserinfo="getUserInfo">
+        <image src="../../images/wechat.png"></image>
+        <text>微信账号登录</text>
+        <button open-type="getPhoneNumber" class="getUserInfo" bindgetphonenumber="getPhoneNumber">获取用户手机号</button>
+        <!-- <button open-type="getUserInfo" class="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button> -->
+      </view>
+
+      <!-- <view class="zj-mobile-login" bindtap="toMobilePage">
+        <image src="../../images/mobile.png"></image>
+        <text>手机账号登录</text>
+      </view> -->
+
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,47 @@
+<view class="body">
+    <view class='content'>
+      <view class='top'>
+         <image mode='widthFix' src='{{iconpath}}certification3.png'></image>
+      </view>
+<form bindsubmit="formSubmit" report-submit='true'>
+        <view class='certificate'>
+            <view class='left'>公司logo</view>
+            <input name="logo" value='{{logo||domain+data.logo}}' style="display:none"/>
+            <view class='right'>
+                <view class='image'>
+                 <image mode='widthFix' wx:if="{{logo||data.logo}}" src='{{logo||domain+data.logo}}' bindtap='putlogo'></image>
+                <image mode='widthFix'  src='{{iconpath}}add2.png' bindtap='putlogo' wx:else></image>
+                </view>
+                <text>请上传低于5m的图片</text>
+            </view>
+        </view>
+
+
+
+       <view class='certificate' style='height:auto;border:none;'>
+            <view class='left'>公司照片</view>
+            <view class='right right2' style='height:auto;'>
+                <view style='width:100%;height:30rpx;'></view>
+                <block wx:for-item="val" wx:for-index="key" wx:for="{{photos}}">
+                    <view  class='image' bindtap='photoone' data-src='{{val}}'>
+                      <image  mode='widthFix' src='{{val}}' ></image>
+                    </view>
+                </block>
+                <view class='image' wx:if="{{photos.length < 6}}">
+                  <image  mode='widthFix'  bindtap='photos' src='{{iconpath}}add2.png' ></image>
+                </view>
+                <text style='padding-bottom: 30rpx;'>提供6张俱乐部实景照片，每张大小不超过5m</text>
+            </view>
+        </view>
+
+
+      <view class='introduction'>
+          <view class='title'><view>公司简介</view></view>
+          <textarea placeholder="请讲述一下公司" maxlength="500" bindinput="textchange" name="introduction" value='{{data.introduction}}'></textarea>
+           <view class='len'>{{textlen}}/500</view>
+      </view>
+
+      <button class='button' disabled="{{disButton}}" form-type='submit'>立即认证</button>
+    </form>
+    </view>
+</view>

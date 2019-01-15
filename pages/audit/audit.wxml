@@ -1,0 +1,27 @@
+<!-- <view class="body">
+    
+</view> -->
+
+<view class="body">
+
+  <view class='content' wx:if="{{status == 5}}">
+      <view class='content_'>
+        <image mode='widthFix' src='{{iconpath}}auditerror.png'></image>
+        <text>{{statusmsg}}</text> 
+        <text>具体原因请联系黑格力斯管理员</text> 
+        <view class='again' bindtap='again'>重新认证</view> 
+        <view class='give' bindtap='fangqi'>放弃认证</view> 
+      </view>
+    </view>
+
+    <view class='content' wx:else>
+      <view class='content_'>
+          <image mode='widthFix' src='{{iconpath}}audit.png'></image>
+          <!-- <text>{{msg}}</text> -->
+          <text>{{msg}}</text>
+          <view>{{statusmsg}}</view>
+      </view>
+    </view>
+    
+    
+</view>

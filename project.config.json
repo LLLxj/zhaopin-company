@@ -1,0 +1,73 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wxabef124061870ba2",
+	"projectname": "hgls-zhaopin-com",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "22",
+					"pathName": "pages/certification2/certification2",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "33",
+					"pathName": "pages/certification3/certification3",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "audit",
+					"pathName": "pages/audit/audit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "auditerror",
+					"pathName": "pages/auditerror/auditerror",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ce3",
+					"pathName": "pages/certification3/certification3"
+				}
+			]
+		}
+	}
+}

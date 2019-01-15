@@ -1,0 +1,56 @@
+<view class="body">
+    <view class='content'>
+      <view class='top'>
+         <image mode='widthFix' src='{{iconpath}}certification2.png'></image>
+      </view>
+ <form bindsubmit="formSubmit">
+
+      <view class='select'>
+          <view class='left'>姓名</view>
+          <view class='center'><input maxlength="10" name="contact" value='{{data.contact}}' placeholder-class="phcolor" placeholder="请输入" auto-focus/></view>
+          <view class='right'></view>
+      </view>
+
+       <!-- <view class='select'>
+            <view class='left'>身份证</view>
+            <view class='center'><input type='number' maxlength="18" name="idcard" value='{{data.idcard}}' placeholder-class="phcolor" placeholder="请输入" /></view>
+            <view class='right'></view>
+      </view> -->
+
+      <view class='select'>
+        <view class='left'>手机号码</view>
+        <view class='center'><input type='number' maxlength="11" name="mobile" value='{{data.mobile}}' placeholder-class="phcolor" placeholder="请输入" /></view>
+        <view class='right'></view>
+      </view>
+
+      <view class='select'>
+          <view class='left'>职位</view>
+          <view class='center'><input maxlength="10" name="position" value='{{data.position}}' placeholder-class="phcolor" placeholder="请输入" auto-focus/></view>
+          <view class='right'></view>
+      </view>
+
+
+        <!-- <view class='certificate'>
+            <input name="icon" value="{{icon||domain+data.icon}}" style="display:none;"/>
+            <view class='left'>联系人头像</view>
+            <view class='right'>
+                <view class='image'>
+                 <image mode='widthFix' wx:if="{{icon||data.icon}}" src='{{icon||domain+data.icon}}' bindtap='uploadfile'></image>
+                <image mode='widthFix'  src='{{iconpath}}add2.png' bindtap='uploadfile' wx:else></image>
+                </view>
+                <text>请上传低于5m的图片</text>
+                
+            </view>
+        
+        </view> -->
+
+         <view class='btop'>
+            <button class='button' disabled="{{disButton}}" form-type="submit">
+           下一步
+            </button>
+        </view> 
+
+     </form>
+
+    </view>
+</view>

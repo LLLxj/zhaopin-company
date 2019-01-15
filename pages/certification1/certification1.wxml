@@ -1,0 +1,56 @@
+<view class="body" style="position:fixed">
+    <view class='content'>
+      <view class='top'>
+         <image mode='widthFix' src='{{iconpath}}certification1.png'></image>
+      </view>
+ <form bindsubmit="formSubmit">
+
+      <view class='select'>
+        <view class='left'>俱乐部名称</view>
+        <view class='center'><input maxlength="50" value='{{clubname||data.clubname}}' name="clubname" placeholder-class="phcolor" placeholder="请输入" /></view>
+        <view class='right'></view>
+      </view>
+
+      <view class='select' >
+        <view class='left'>俱乐部地址</view>
+        <view class='center'><input bindinput='onchage' maxlength="50" value='{{setAddress}}' placeholder-class="phcolor" placeholder="请输入" /></view>
+        <view class='right'></view>
+      </view>
+
+      <view class='select'>
+        <view class='left'>公司名称</view>
+        <view class='center'><input maxlength="50" value='{{data.companyname}}' name="companyname" placeholder-class="phcolor" placeholder="请输入" /></view>
+        <view class='right'></view>
+      </view>
+
+      <view class='select'>
+        <view class='left'>校区形式</view>
+        <picker bindchange="formchange" range="{{formarray}}">
+        <view class='center'>
+          <input placeholder-class="phcolor" name="form" placeholder="请选择" value='{{form||data.form}}' disabled="true"/>
+        </view>
+        <view class='right'> <image class='rightimg' mode='widthFix' src="{{iconpath}}right.png"></image></view>
+        </picker>
+      </view>
+
+        <view class='certificate'>
+          <input name="license" value="{{license||domain+data.license}}" style="display:none;"/>
+          <view class='left'>营业执照</view>
+          <view class='right'>
+              <view class='image'>
+                <image mode='widthFix' wx:if="{{license||data.license}}" src='{{license||domain+data.license}}' bindtap='uploadfile'></image>
+              <image mode='widthFix'  src='{{iconpath}}add2.png' bindtap='uploadfile' wx:else></image>
+              </view>
+              <text > 请上传低于5m的图片</text>
+          </view>
+        </view>
+         <view class='btop'>
+            <button class='button' disabled="{{disButton}}" form-type="submit">
+              下一步
+            </button>
+        </view> 
+
+     </form>
+
+    </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="body">
+    <view class='content'>
+      <view class='content_'>
+          <image mode='widthFix' src='{{iconpath}}postionnull.png'></image>
+           <text>您还没有发布职位，快去发布职位吧！</text> 
+           <view class='again' bindtap='again'>发布职位</view> 
+      </view>
+    </view>
+</view>

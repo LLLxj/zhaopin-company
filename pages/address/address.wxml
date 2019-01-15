@@ -1,0 +1,14 @@
+<view class='body'>
+    <view class='content'>
+      <view class='introduction'>
+          <textarea placeholder="列：广东省广州市白云区文山文化产业园" maxlength="255" value='{{address}}' bindinput="getprompt"></textarea>
+      </view>
+    </view>
+     <view class='button' bindtap='formSubmit'>保存</view>
+     <!-- <view class='addlist'>
+        <block wx:for="{{addlist}}" wx:for-item="val">
+          <view class='addlist' bindtap='xuanadd' data-key="{{index}}">{{val.district}}{{val.name}}{{val.address}}</view>
+          <view class='line'>.</view>
+        </block>
+     </view> -->
+</view>

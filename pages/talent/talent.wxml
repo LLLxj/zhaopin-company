@@ -1,0 +1,34 @@
+<view class='body'>
+  <view class='content'>
+    <image class='banner' wx:if="{{adlist.length == 0}}" src='{{iconpath}}jlbanner.png' mode='widthFix'></image>
+    <swiper indicator-dots="true" wx:if="{{adlist.length > 0}}" indicator-color="#fafafa" indicator-active-color="#e35800" autoplay="true" interval="2000">
+      <block wx:for="{{adlist}}" wx:key="unique" >
+        <swiper-item bindtap="jump" data-id='{{item.uid}}'>
+          <image mode='widthFix' src="{{item.src}}" width="100%" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+      <view class='list' wx:for="{{data}}" bindtap="{{userInfo ? 'url' : 'toLogin'}}" data-userid='{{item.uid}}' wx:key="unique">
+        <view class='content'>
+            <view class='top'>
+              <view class='left'>{{item.position}}</view>
+              <view class='right'>{{item.salary}}</view>
+            </view>
+            <view class='centent'>
+                <view class='left'>{{item.user.city}} | {{item.user.worktime}} | {{item.learning}}</view>
+                <view class='right'>{{item.status}}</view>
+            </view>
+            <view class='bottom'>
+              <view class='logo'><image mode='widthFix' src='{{item.user.icon}}'></image></view>
+              <view class='cname'>{{item.user.username}}</view>
+            </view>
+        </view>
+      </view>
+
+      <view class='prompt' style='display:{{prompt_display}}'> {{prompt_msg}} </view>
+      <!-- 底线 -->
+      <!-- <view class='line'></view> -->
+  
+  </view>
+</view>
